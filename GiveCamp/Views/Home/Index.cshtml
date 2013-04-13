@@ -2,44 +2,33 @@
     ViewBag.Title = "Home Page";
 }
 @section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-            <p>
-                To learn more about ASP.NET MVC visit
-                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
-                If you have any questions about ASP.NET MVC visit
-                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
-            </p>
-        </div>
-    </section>
+    <div class="jumbotron">
+        <h1>What is GiveCamp?</h1>
+        <p class="lead">GiveCamp is a weekend-long event where software developers, designers, database administrators and project managers donate their time to create custom software for non-profit organizations. This custom software could be a new website for the nonprofit organization, a small data-collection application to keep track of members, or a application for the Red Cross that automatically emails a blood donor three months after they’ve donated blood to remind them that they are now eligible to donate again. The only limitation is that the project should be scoped to be able to be completed in a weekend.</p>
+        <p class="lead">At GiveCamp last year, in one weekend we were able to donate over 1/2 a million dollars worth of development time to over a dozen local charities.</p>
+    </div>
 }
-<h3>We suggest the following:</h3>
-<ol class="round">
-    <li class="one">
-        <h5>Getting Started</h5>
-        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-        enables a clean separation of concerns and that gives you full control over markup
-        for enjoyable, agile development. ASP.NET MVC includes many features that enable
-        fast, TDD-friendly development for creating sophisticated applications that use
-        the latest web standards.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
-    </li>
-
-    <li class="two">
-        <h5>Add NuGet packages and jump-start your coding</h5>
-        NuGet makes it easy to install and update free libraries and tools.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
-    </li>
-
-    <li class="three">
-        <h5>Find Web Hosting</h5>
-        You can easily find a web hosting company that offers the right mix of features
-        and price for your applications.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-    </li>
-</ol>
+<div class="row-fluid">
+    <div class="span6 well">
+        <h2>Developer or Designer</h2>
+        <p class="lead">Do you have code/design skills? Do you have a free weekend? Do you want to participate in one of the most rewarding events around? We need your help!</p>
+        <p class="text-right"><a class="btn btn-success btn-large" href="#">More Info</a></p>
+    </div>
+    <div class="span6 well">
+        <h2>Project Manager or Business Analyst</h2>
+        <p class="lead">Do you have project management or business analyst experiance? Do you want to help lead a charity through the GiveCamp process?  We need your help!</p>
+        <p class="text-right"><a class="btn btn-success btn-large" href="#">More Info</a></p>
+    </div>
+    </div>
+<div class="row-fluid">
+    <div class="span6 well">
+        <h2>Charity</h2>
+        <p class="lead">Are you a non-profit that works to support the Dallas/Ft. Worth community? Do you need an updated web presence or other development project? We want to help you!</p>
+        <p class="text-right"><a class="btn btn-success btn-large" href="#">More Info</a></p>
+    </div>
+    <div class="span6 well">
+        <h2>Supporter</h2>
+        <p class="lead">Do you believe in our mission? Do you want to reach the most influential folks in the Dallas IT community? We need your help!</p>
+        <p class="text-right"><a class="btn btn-success btn-large" href="#">More Info</a></p>
+    </div>
+</div>
