@@ -1,50 +1,42 @@
-﻿@{
+﻿@model GiveCamp.ViewModels.Home.ContactViewModel
+@{
     ViewBag.Title = "Contact";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
-</hgroup>
-
-<section class="contact">
+<section>
     <header>
-        <h3>Phone</h3>
+        <h3>Contact Us</h3>
     </header>
-    <p>
-        <span class="label">Main:</span>
-        <span>425.555.0100</span>
-    </p>
-    <p>
-        <span class="label">After Hours:</span>
-        <span>425.555.0199</span>
-    </p>
+    @using (Html.BeginForm("Contact", "Home", null, FormMethod.Post, new { @class = "form-horizontal" })) {
+        
+        @Html.EditorForModel();
+        
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox">
+                    Remember me
+                </label>
+                <button type="submit" class="btn">Sign in</button>
+            </div>
+        </div>
+    }
 </section>
 
-<section class="contact">
+<section>
     <header>
-        <h3>Email</h3>
+        <h3>via Email</h3>
     </header>
-    <p>
-        <span class="label">Support:</span>
-        <span><a href="mailto:Support@example.com">Support@example.com</a></span>
-    </p>
-    <p>
-        <span class="label">Marketing:</span>
-        <span><a href="mailto:Marketing@example.com">Marketing@example.com</a></span>
-    </p>
     <p>
         <span class="label">General:</span>
-        <span><a href="mailto:General@example.com">General@example.com</a></span>
+        <span><a href="mailto:bod@dallasgivecamp.org">bod@dallasgivecamp.org</a></span>
     </p>
-</section>
-
-<section class="contact">
-    <header>
-        <h3>Address</h3>
-    </header>
     <p>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399
+        <span class="label">Project Management:</span>
+        <span><a href="mailto:pm@dallasgivecamp.org">pm@dallasgivecamp.org</a></span>
+    </p>
+    <p>
+        <span class="label">Public Relations:</span>
+        <span><a href="mailto:pr@dallasgivecamp.org">pr@dallasgivecamp.org</a></span>
     </p>
 </section>

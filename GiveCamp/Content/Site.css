@@ -1,1 +1,11 @@
-﻿
+﻿body {
+    margin:10px;
+}
+
+.carousel-indicators .active {
+    background-color: #51a351;
+}
+
+.carousel-indicators li {
+    background-color: #fff;
+}
