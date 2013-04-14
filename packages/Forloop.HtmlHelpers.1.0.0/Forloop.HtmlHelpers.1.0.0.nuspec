@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Forloop.HtmlHelpers</id>
+    <version>1.0.0</version>
+    <title>Forloop.HtmlHelpers</title>
+    <authors>forloop</authors>
+    <owners>forloop</owners>
+    <licenseUrl>https://bitbucket.org/forloop/forloop-htmlhelpers</licenseUrl>
+    <projectUrl>https://bitbucket.org/forloop/forloop-htmlhelpers</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>HtmlHelpers for managing scripts for Razor Partial Views and Templates in ASP.NET MVC 4</description>
+    <releaseNotes>Initial Release.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <language />
+    <tags>Asp.Net AspNet Mvc AspNetMvc Asp.Net-Mvc HtmlHelper JavaScript</tags>
+    <references>
+      <reference file="Forloop.HtmlHelpers.dll" />
+    </references>
+  </metadata>
+</package>

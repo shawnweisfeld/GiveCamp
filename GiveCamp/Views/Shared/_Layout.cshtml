@@ -59,6 +59,8 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/scripts/site.js")
     @RenderSection("scripts", required: false)
+    @Html.RenderScripts()
 </body>
 </html>

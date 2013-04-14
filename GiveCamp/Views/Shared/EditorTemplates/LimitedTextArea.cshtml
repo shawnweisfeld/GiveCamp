@@ -1,4 +1,6 @@
-﻿@using System.ComponentModel.DataAnnotations;
+﻿@using System.ComponentModel.DataAnnotations
+@using Forloop.HtmlHelpers
+
 @model string
 
 @{
@@ -25,18 +27,12 @@
 
 }
 
-@Html.TextAreaFor(model => model, new { cols = 50, rows = 5 })
-@if (maxLength > 0)
+@Html.TextAreaFor(model => model, new { cols = 50, rows = 5, data_limit = maxLength })
+<div id="CharLeft-@id"></div>
+@using (Html.BeginScriptContext())
 {
-    <div id="msg-textarea-@(id)" class="textarea-chars">Maximum @maxLength characters</div>
-    <script>
-        $(function () {
-            var limit = $('#@id').limit;
-          if (limit) {
-              $("#msg-textarea-@id")
-                .html("<span id='left@(id)'></span> characters left");
-            $('#@id').limit('@maxLength', '#left@(id)');
-         }
-      });
-    </script>
+    Html.AddScriptBlock(@"$(function () { 
+        updateCharactersLeftTextBlock('#" + id + "', '#CharLeft-" + id + @"'); 
+        $('#" + id + @"').keyup(function() { updateCharactersLeftTextBlock('#" + id + "', '#CharLeft-" + id + @"'); });
+    });");
 }
