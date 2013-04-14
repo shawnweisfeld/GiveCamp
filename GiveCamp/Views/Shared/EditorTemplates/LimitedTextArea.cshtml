@@ -27,12 +27,16 @@
 
 }
 
-@Html.TextAreaFor(model => model, new { cols = 50, rows = 5, data_limit = maxLength })
-<div id="CharLeft-@id"></div>
+@Html.TextAreaFor(model => model, new { cols = 50, rows = 5})
+<p>You have <span id="counter-@id"></span> characters left.</p>
 @using (Html.BeginScriptContext())
 {
     Html.AddScriptBlock(@"$(function () { 
-        updateCharactersLeftTextBlock('#" + id + "', '#CharLeft-" + id + @"'); 
-        $('#" + id + @"').keyup(function() { updateCharactersLeftTextBlock('#" + id + "', '#CharLeft-" + id + @"'); });
+        $('#" + id + @"').simplyCountable({
+            counter: '#counter-" + id + @"',
+            maxCount: " + maxLength + @",
+            safeClass: 'text-success',
+            overClass: 'text-error'
+        });
     });");
 }
