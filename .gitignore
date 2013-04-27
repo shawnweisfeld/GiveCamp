@@ -8,6 +8,8 @@
 bin/
 tmp/
 *.tmp
+*.mdf
+*.ldf
 *.bak
 *.swp
 *~.nib
