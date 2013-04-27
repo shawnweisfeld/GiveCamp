@@ -183,6 +183,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\VolunteerController.cs" />
+    <Compile Include="Models\GiveCampContext.cs" />
+    <Compile Include="Models\GiveCampContextInitializer.cs" />
+    <Compile Include="Models\VolunteerRegistration.cs" />
     <Compile Include="ViewModels\Home\ContactViewModel.cs" />
     <Content Include="App_Code\MvcHelpers.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
@@ -327,11 +331,15 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_Sidebar.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\LimitedTextArea.cshtml" />
+    <Content Include="Views\Volunteer\Index.cshtml" />
+    <Content Include="Views\Volunteer\Details.cshtml" />
+    <Content Include="Views\Volunteer\Create.cshtml" />
+    <Content Include="Views\Volunteer\Edit.cshtml" />
+    <Content Include="Views\Volunteer\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

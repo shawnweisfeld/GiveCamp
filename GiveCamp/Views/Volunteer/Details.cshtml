@@ -1,0 +1,148 @@
+﻿@model GiveCamp.Models.VolunteerRegistration
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>VolunteerRegistration</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TeamName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TeamName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Twitter)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Twitter)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WebsiteUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WebsiteUrl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ShirtSize)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ShirtSize)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Diet)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Diet)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Student)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Student)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mvp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mvp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SkillLevel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SkillLevel)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Comments)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comments)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsDeveloper)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsDeveloper)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsDesigner)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsDesigner)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsProjectManager)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsProjectManager)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsBusinessAnalyst)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsBusinessAnalyst)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsStaff)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsStaff)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

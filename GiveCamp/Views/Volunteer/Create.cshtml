@@ -1,0 +1,180 @@
+﻿@model GiveCamp.Models.VolunteerRegistration
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>VolunteerRegistration</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TeamName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TeamName)
+            @Html.ValidationMessageFor(model => model.TeamName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Twitter)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Twitter)
+            @Html.ValidationMessageFor(model => model.Twitter)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WebsiteUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WebsiteUrl)
+            @Html.ValidationMessageFor(model => model.WebsiteUrl)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ShirtSize)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ShirtSize)
+            @Html.ValidationMessageFor(model => model.ShirtSize)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Diet)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Diet)
+            @Html.ValidationMessageFor(model => model.Diet)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Student)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Student)
+            @Html.ValidationMessageFor(model => model.Student)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mvp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mvp)
+            @Html.ValidationMessageFor(model => model.Mvp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SkillLevel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SkillLevel)
+            @Html.ValidationMessageFor(model => model.SkillLevel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Bio)
+            @Html.ValidationMessageFor(model => model.Bio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Comments)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Comments)
+            @Html.ValidationMessageFor(model => model.Comments)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsDeveloper)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDeveloper)
+            @Html.ValidationMessageFor(model => model.IsDeveloper)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsDesigner)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDesigner)
+            @Html.ValidationMessageFor(model => model.IsDesigner)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsProjectManager)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsProjectManager)
+            @Html.ValidationMessageFor(model => model.IsProjectManager)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsBusinessAnalyst)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsBusinessAnalyst)
+            @Html.ValidationMessageFor(model => model.IsBusinessAnalyst)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsStaff)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsStaff)
+            @Html.ValidationMessageFor(model => model.IsStaff)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

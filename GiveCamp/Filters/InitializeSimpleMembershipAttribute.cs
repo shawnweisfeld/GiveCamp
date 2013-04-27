@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
+using System.Web.Query.Dynamic;
 using WebMatrix.WebData;
 using GiveCamp.Models;
 
@@ -25,20 +27,15 @@ namespace GiveCamp.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
-
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new GiveCampContext())
                     {
-                        if (!context.Database.Exists())
-                        {
-                            // Create the SimpleMembership database without Entity Framework migration schema
-                            ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
-                        }
+                        //perform a query on the database to make sure that it is there.
+                        var foo = context.UserProfiles.Count();
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("GiveCampContext", "UserProfile", "UserId", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

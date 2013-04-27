@@ -20,13 +20,21 @@
                 <div class="navbar-inner">
                     <div class="container">
                         <ul class="nav">
-                            @Html.MenuLink("Home","Index","Home")
+                            @Html.MenuLink("Home", "Index", "Home")
                             <li><a href="#">News</a></li>
                             <li><a href="#">Location</a></li>
                             <li><a href="#">Schedule</a></li>
                             <li><a href="#">Sponsors</a></li>
-                            @Html.MenuLink("Contact","Contact","Home")
-                            @Html.Partial("_LoginPartial")
+                            @Html.MenuLink("Contact", "Contact", "Home")
+                            @if (Request.IsAuthenticated)
+                            {
+                                @Html.MenuLink("Account", "Manage", "Account")
+                                @Html.MenuLink("Log Off", "LogOff", "Account")
+                            }
+                            else
+                            {
+                                @Html.MenuLink("Log in", "Login", "Account")
+                            }
                         </ul>
                     </div>
                 </div>
