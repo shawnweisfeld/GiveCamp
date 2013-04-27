@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GiveCamp.Models;
+using WebMatrix.WebData;
 
 namespace GiveCamp.Controllers
 {
@@ -15,53 +16,71 @@ namespace GiveCamp.Controllers
 
         //
         // GET: /Volunteer/
-        
+        [Authorize(Roles="Admin")]
         public ActionResult Index()
         {
             return View(db.VolunteerRegistrations.ToList());
         }
 
-        //
-        // GET: /Volunteer/Details/5
-
-        public ActionResult Details(int id = 0)
-        {
-            VolunteerRegistration volunteerregistration = db.VolunteerRegistrations.Find(id);
-            if (volunteerregistration == null)
-            {
-                return HttpNotFound();
-            }
-            return View(volunteerregistration);
-        }
-
-        //
-        // GET: /Volunteer/Create
-
-        public ActionResult Create()
+        public ActionResult RoleInfo()
         {
             return View();
         }
 
         //
-        // POST: /Volunteer/Create
+        // GET: /Volunteer/Details/5
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(VolunteerRegistration volunteerregistration)
+        //public ActionResult Details(int id = 0)
+        //{
+        //    VolunteerRegistration volunteerregistration = db.VolunteerRegistrations.Find(id);
+        //    if (volunteerregistration == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(volunteerregistration);
+        //}
+
+        //
+        // GET: /Volunteer/Create
+        [Authorize()]
+        public ActionResult Create()
         {
-            if (ModelState.IsValid)
-            {
-                db.VolunteerRegistrations.Add(volunteerregistration);
+            VolunteerRegistration reg = 
+                db.VolunteerRegistrations
+                .FirstOrDefault(x => x.User.UserName == User.Identity.Name);
+
+            if (reg == null)
+            { 
+                reg = new VolunteerRegistration();
+                reg.User = db.UserProfiles.First(x => x.UserName == User.Identity.Name);
+                db.VolunteerRegistrations.Add(reg);
                 db.SaveChanges();
-                return RedirectToAction("Index");
             }
 
-            return View(volunteerregistration);
+            return RedirectToAction("Edit", new { id = reg.Id });
         }
 
         //
-        // GET: /Volunteer/Edit/5
+        // POST: /Volunteer/Create
 
+        //[HttpPost]
+        //[Authorize()]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create(VolunteerRegistration volunteerregistration)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.VolunteerRegistrations.Add(volunteerregistration);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    return View(volunteerregistration);
+        //}
+
+        //
+        // GET: /Volunteer/Edit/5
+        [Authorize()]
         public ActionResult Edit(int id = 0)
         {
             VolunteerRegistration volunteerregistration = db.VolunteerRegistrations.Find(id);
@@ -76,6 +95,7 @@ namespace GiveCamp.Controllers
         // POST: /Volunteer/Edit/5
 
         [HttpPost]
+        [Authorize()]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(VolunteerRegistration volunteerregistration)
         {
@@ -83,14 +103,15 @@ namespace GiveCamp.Controllers
             {
                 db.Entry(volunteerregistration).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                ViewBag.Saved = true;
+                return View(volunteerregistration);
             }
             return View(volunteerregistration);
         }
 
         //
         // GET: /Volunteer/Delete/5
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id = 0)
         {
             VolunteerRegistration volunteerregistration = db.VolunteerRegistrations.Find(id);
@@ -105,6 +126,7 @@ namespace GiveCamp.Controllers
         // POST: /Volunteer/Delete/5
 
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

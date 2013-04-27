@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace GiveCamp.Models
 {
@@ -26,7 +27,11 @@ namespace GiveCamp.Models
         public bool Student { get; set; }
         public bool Mvp { get; set; }
         public string SkillLevel { get; set; }
+
+        [AllowHtml]
         public string Bio { get; set; }
+
+        [AllowHtml]
         public string Comments { get; set; }
         public bool IsDeveloper { get; set; }
         public bool IsDesigner { get; set; }

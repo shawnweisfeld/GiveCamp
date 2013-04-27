@@ -10,7 +10,8 @@ namespace GiveCamp
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/jquery.simplyCountable.js"));
+                        "~/Scripts/jquery.simplyCountable.js",
+                        "~/Scripts/tinymce/tiny_mce.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));

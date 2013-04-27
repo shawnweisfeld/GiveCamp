@@ -7,7 +7,8 @@ using System.Text;
 namespace GiveCamp.Models
 {
     public class GiveCampContextInitializer : 
-        DropCreateDatabaseIfModelChanges<GiveCampContext> 
+        CreateDatabaseIfNotExists<GiveCampContext>
+        //DropCreateDatabaseIfModelChanges<GiveCampContext> 
         //DropCreateDatabaseAlways<GiveCampContext>
     {
     }
