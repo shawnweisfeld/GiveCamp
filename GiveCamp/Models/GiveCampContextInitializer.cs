@@ -6,7 +6,9 @@ using System.Text;
 
 namespace GiveCamp.Models
 {
-    public class GiveCampContextInitializer : DropCreateDatabaseIfModelChanges<GiveCampContext> //DropCreateDatabaseAlways<GiveCampContext>
+    public class GiveCampContextInitializer : 
+        DropCreateDatabaseIfModelChanges<GiveCampContext> 
+        //DropCreateDatabaseAlways<GiveCampContext>
     {
     }
 }

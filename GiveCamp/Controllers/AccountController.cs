@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using GiveCamp.Filters;
 using GiveCamp.Models;
+using System.Configuration;
 
 namespace GiveCamp.Controllers
 {
@@ -209,6 +210,23 @@ namespace GiveCamp.Controllers
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
             return new ExternalLoginResult(provider, Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl }));
+        }
+
+
+        public ActionResult SetupAdmin()
+        {
+            var admin = "Admin";
+
+            if (!Roles.RoleExists(admin))
+                Roles.CreateRole(admin);
+
+            foreach (var user in ConfigurationManager.AppSettings["Admins"].Split(';'))
+            {
+                if (WebSecurity.UserExists(user) && !Roles.IsUserInRole(user, admin))
+                    Roles.AddUserToRole(user, admin);
+            }
+
+            return RedirectToAction("Index", "Home");
         }
 
         //
