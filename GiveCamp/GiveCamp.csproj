@@ -284,6 +284,8 @@
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\jquery-ui-1.10.2.js" />
     <Content Include="Scripts\jquery-ui-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.3.1.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.3.1.min.js" />
     <Content Include="Scripts\jquery.simplyCountable.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
@@ -593,11 +595,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_Sidebar.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\LimitedTextArea.cshtml" />
-    <Content Include="Views\Volunteer\Index.cshtml" />
     <Content Include="Views\Volunteer\Details.cshtml" />
-    <Content Include="Views\Volunteer\Create.cshtml" />
-    <Content Include="Views\Volunteer\Edit.cshtml" />
-    <Content Include="Views\Volunteer\Delete.cshtml" />
     <Content Include="Views\Volunteer\RoleInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>

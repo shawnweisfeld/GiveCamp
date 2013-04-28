@@ -51,6 +51,12 @@
                         <hr />
                     }
                     <section class="content-wrapper main-content clear-fix">
+                        @if (!string.IsNullOrWhiteSpace(ViewBag.AlertSuccess))
+                        { 
+                            <div class="alert alert-success">
+                                @ViewBag.AlertSuccess
+                            </div>
+                        }
                         @RenderBody()
                     </section>
                 </div>
