@@ -27,38 +27,21 @@ namespace GiveCamp.Controllers
                 .FirstOrDefault(x => x.User.UserName == User.Identity.Name);
 
             if (reg == null)
-            { 
+            {
                 reg = new VolunteerRegistration();
                 reg.User = db.UserProfiles.First(x => x.UserName == User.Identity.Name);
             }
 
-            ViewBag.ShirtSizeList = GetShirtSizeList(reg);
-
             return View(reg);
         }
 
-        private IEnumerable<SelectListItem> GetShirtSizeList(VolunteerRegistration reg)
-        {
-            var items = new string[] { "Small", "Medium", "Large", "X-Large", "2X-Large", "3X-Large" };
 
-            foreach (var item in items)
-            {
-                yield return new SelectListItem() 
-                {
-                    Text = item,
-                    Value = item,
-                    Selected = (reg != null && reg.ShirtSize == item)
-                };
-            }
-        }
 
         [HttpPost]
         [Authorize()]
         [ValidateAntiForgeryToken]
         public ActionResult Details(VolunteerRegistration volunteerregistration)
         {
-            ViewBag.ShirtSizeList = GetShirtSizeList(volunteerregistration);
-
             if (ModelState.IsValid)
             {
                 if (volunteerregistration.Id == 0)

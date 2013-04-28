@@ -24,5 +24,18 @@ namespace GiveCamp
 
             return new MvcHtmlString(builder.ToString());
         }
+
+        public static IEnumerable<SelectListItem> GetSelectList(this HtmlHelper htmlHelper, string selectedValue, params string[] avaiableValues)
+        {
+            foreach (var item in avaiableValues)
+            {
+                yield return new SelectListItem()
+                {
+                    Text = item,
+                    Value = item,
+                    Selected = (selectedValue == item)
+                };
+            }
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace GiveCamp.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        
+
         public virtual UserProfile User { get; set; }
         public int UserID { get; set; }
 
@@ -52,7 +52,7 @@ namespace GiveCamp.Models
 
         public string Phone { get; set; }
 
-        [StringLength(100)]
+        [StringLength(50)]
         [DisplayName("Shirt Size")]
         public string ShirtSize { get; set; }
 
@@ -65,7 +65,7 @@ namespace GiveCamp.Models
 
         [DisplayName("MVP")]
         public bool Mvp { get; set; }
-        
+
         [AllowHtml]
         [DisplayName("Bio")]
         public string Bio { get; set; }
@@ -73,11 +73,85 @@ namespace GiveCamp.Models
         [AllowHtml]
         [DisplayName("Comments")]
         public string Comments { get; set; }
-        
+
         public bool IsDeveloper { get; set; }
         public bool IsDesigner { get; set; }
         public bool IsProjectManager { get; set; }
         public bool IsBusinessAnalyst { get; set; }
         public bool IsStaff { get; set; }
+
+
+        [StringLength(50)]
+        [DisplayName("ASP.NET MVC")]
+        public string MVC { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("ASP.NET Web Forms")]
+        public string WebForms { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("C#")]
+        public string CSharp { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("CSS")]
+        public string Css { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("DotNetNuke")]
+        public string DotNetNuke { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("HTML 5")]
+        public string Html5 { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("Joomla")]
+        public string Joomla { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("JavaScript")]
+        public string JavaScript { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("jQuery")]
+        public string JQuery { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("Orchard")]
+        public string Orchard { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("PHP")]
+        public string Php { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("Project Management")]
+        public string ProjectManagement { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("Requirements Gathering")]
+        public string RequirementsGathering { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("Sitefinity")]
+        public string Sitefinity { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("Team Leadership")]
+        public string TeamLeadership { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("VB.NET")]
+        public string Vbnet { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("Website Design")]
+        public string WebsiteDesign { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("WordPress")]
+        public string WordPress { get; set; }
+
     }
 }

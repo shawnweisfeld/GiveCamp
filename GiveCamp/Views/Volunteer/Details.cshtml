@@ -97,10 +97,9 @@
                 Shirt Size
             </div>
             <div class="controls">
-                @Html.DropDownList("ShirtSize", ViewBag.ShirtSizeList as IEnumerable<SelectListItem>)
+                @Html.DropDownListFor(model => model.ShirtSize, Html.GetSelectList(Model.ShirtSize, "Small", "Medium", "Large", "X-Large", "2X-Large", "3X-Large"))
                 @Html.ValidationMessageFor(model => model.ShirtSize)
-                <span class="help-inline">
-                    Sizes are in Mens.
+                <span class="help-inline">Sizes are in Mens.
                 </span>
             </div>
         </div>
@@ -210,6 +209,44 @@
                 @Html.ValidationMessageFor(model => model.IsStaff)
             </div>
         </div>
+
+        <div class="control-group">
+            <h3>Tell us about your skill level
+            </h3>
+            <span class="help-block">This will help us match folks to projects with the approperate needs.
+            </span>
+            <dl class="dl-horizontal">
+                <dt>Novice</dt>
+                <dd>I have played with it once or twice</dd>
+                <dt>Apprentice</dt>
+                <dd>I have worked with it for less than a few years but I might need some help if I get stuck</dd>
+                <dt>Experienced</dt>
+                <dd>I have used it for more than a few years and could figure out most things with little help</dd>
+                <dt>Lead </dt>
+                <dd>I have used it for many years and could help guide others</dd>
+                <dt>Expert </dt>
+                <dd>I have considerable experience with it and could help others out if they get stuck</dd>
+            </dl>
+        </div>
+
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.MVC)</div><div class="controls">@Html.DropDownListFor(model => model.MVC, Html.GetSelectList(Model.MVC, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.WebForms)</div><div class="controls">@Html.DropDownListFor(model => model.WebForms, Html.GetSelectList(Model.WebForms, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.CSharp)</div><div class="controls">@Html.DropDownListFor(model => model.CSharp, Html.GetSelectList(Model.CSharp, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.Css)</div><div class="controls">@Html.DropDownListFor(model => model.Css, Html.GetSelectList(Model.Css, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.DotNetNuke)</div><div class="controls">@Html.DropDownListFor(model => model.DotNetNuke, Html.GetSelectList(Model.DotNetNuke, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.Html5)</div><div class="controls">@Html.DropDownListFor(model => model.Html5, Html.GetSelectList(Model.Html5, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.Joomla)</div><div class="controls">@Html.DropDownListFor(model => model.Joomla, Html.GetSelectList(Model.Joomla, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.JavaScript)</div><div class="controls">@Html.DropDownListFor(model => model.JavaScript, Html.GetSelectList(Model.JavaScript, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.JQuery)</div><div class="controls">@Html.DropDownListFor(model => model.JQuery, Html.GetSelectList(Model.JQuery, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.Orchard)</div><div class="controls">@Html.DropDownListFor(model => model.Orchard, Html.GetSelectList(Model.Orchard, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.Php)</div><div class="controls">@Html.DropDownListFor(model => model.Php, Html.GetSelectList(Model.Php, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.ProjectManagement)</div><div class="controls">@Html.DropDownListFor(model => model.ProjectManagement, Html.GetSelectList(Model.ProjectManagement, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.RequirementsGathering)</div><div class="controls">@Html.DropDownListFor(model => model.RequirementsGathering, Html.GetSelectList(Model.RequirementsGathering, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.Sitefinity)</div><div class="controls">@Html.DropDownListFor(model => model.Sitefinity, Html.GetSelectList(Model.Sitefinity, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.TeamLeadership)</div><div class="controls">@Html.DropDownListFor(model => model.TeamLeadership, Html.GetSelectList(Model.TeamLeadership, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.Vbnet)</div><div class="controls">@Html.DropDownListFor(model => model.Vbnet, Html.GetSelectList(Model.Vbnet, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.WebsiteDesign)</div><div class="controls">@Html.DropDownListFor(model => model.WebsiteDesign, Html.GetSelectList(Model.WebsiteDesign, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
+<div class="control-group"><div class="control-label">@Html.LabelFor(model => model.WordPress)</div><div class="controls">@Html.DropDownListFor(model => model.WordPress, Html.GetSelectList(Model.WordPress, "Novice", "Apprentice", "Experienced", "Lead", "Expert"))</div></div>
 
         <div class="control-group">
             <div class="controls">
