@@ -1,1 +1,45 @@
-﻿sidebar
+﻿<div class="sidebar">
+    <div class="text-center">
+        <a class="btn btn-success" href="@Url.Action("RoleInfo", "Charity")">Charities Apply Now!</a>
+    </div>
+    <div class="text-center">
+        <a class="btn btn-success" href="@Url.Action("RoleInfo", "Volunteer")">Volunteers Apply Now!</a>
+    </div>
+    <div class="text-center">
+        <a class="btn btn-success" href="@Url.Action("SponsorInfo", "Home")">Become a Sponsor</a>
+    </div>
+    <div>
+        
+<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script type="text/javascript">// <![CDATA[
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 10,
+  interval: 6000,
+  width: 'auto',
+  height: 300,
+  theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#ffffff',
+      links: '#4aed05'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: true,
+    behavior: 'default'
+  }
+}).render().setUser('DallasGiveCamp').start();
+// ]]></script>
+    </div>
+</div>

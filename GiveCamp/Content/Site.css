@@ -16,3 +16,7 @@
 .text-error {
     font-weight: bold;
 }
+
+.sidebar div {
+    padding-bottom: 15px;
+}
