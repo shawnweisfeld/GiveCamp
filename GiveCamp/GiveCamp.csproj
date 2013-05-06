@@ -183,11 +183,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CharityController.cs" />
     <Compile Include="Controllers\VolunteerController.cs" />
+    <Compile Include="Models\CharityRegistration.cs" />
     <Compile Include="Models\GiveCampContext.cs" />
     <Compile Include="Models\GiveCampContextInitializer.cs" />
     <Compile Include="Models\VolunteerRegistration.cs" />
-    <Compile Include="ViewModels\Home\ContactViewModel.cs" />
     <Content Include="App_Code\MvcHelpers.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BootstrapBundleConfig.cs" />
@@ -594,12 +595,19 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_Sidebar.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\LimitedTextArea.cshtml" />
     <Content Include="Views\Volunteer\Details.cshtml" />
     <Content Include="Views\Volunteer\RoleInfo.cshtml" />
+    <Content Include="Views\Charity\RoleInfo.cshtml" />
+    <Content Include="Views\Charity\Details.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\Schedule.cshtml" />
+    <Content Include="Views\Home\Sponsors.cshtml" />
+    <Content Include="Views\Home\Location.cshtml" />
+    <Content Include="Views\Home\SponsorInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

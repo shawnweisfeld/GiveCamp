@@ -26,5 +26,31 @@ namespace GiveCamp.Controllers
         {
             return View();
         }
+
+        public ActionResult News()
+        {
+            return View();
+        }
+
+        public ActionResult Schedule()
+        {
+            return View();
+        }
+
+        public ActionResult Location()
+        {
+            return View();
+        }
+
+        public ActionResult Sponsors()
+        {
+            return View();
+        }
+
+        public ActionResult SponsorInfo()
+        {
+            return View();
+        }  
+    
     }
 }

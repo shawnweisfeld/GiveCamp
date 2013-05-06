@@ -15,6 +15,7 @@ namespace GiveCamp.Models
 
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<VolunteerRegistration> VolunteerRegistrations { get; set; }
+        public DbSet<CharityRegistration> CharityRegistrations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

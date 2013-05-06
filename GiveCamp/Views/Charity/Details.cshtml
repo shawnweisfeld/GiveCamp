@@ -1,0 +1,215 @@
+﻿@model GiveCamp.Models.CharityRegistration
+
+@{
+    ViewBag.Title = "Charity Registration";
+}
+
+@using (Html.BeginForm("Details", "Charity", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Charity Registration</legend>
+
+        @Html.HiddenFor(model => model.Id)
+        @Html.Hidden("UserID", Model.User.UserId)
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.CharityName)
+            </div>
+            <div class="controls">
+                @Html.EditorFor(model => model.CharityName)
+                @Html.ValidationMessageFor(model => model.CharityName)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.WebsiteUrl)
+            </div>
+            <div class="controls">
+                @Html.EditorFor(model => model.WebsiteUrl)
+                @Html.ValidationMessageFor(model => model.WebsiteUrl)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.BusinessContact)
+            </div>
+            <div class="controls">
+                @Html.EditorFor(model => model.BusinessContact)
+                @Html.ValidationMessageFor(model => model.BusinessContact)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.BusinessContactEmail)
+            </div>
+            <div class="controls">
+                @Html.EditorFor(model => model.BusinessContactEmail)
+                @Html.ValidationMessageFor(model => model.BusinessContactEmail)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.BusinessContactPhone)
+            </div>
+            <div class="controls">
+                @Html.EditorFor(model => model.BusinessContactPhone)
+                @Html.ValidationMessageFor(model => model.BusinessContactPhone)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.AltBusinessContact)
+            </div>
+            <div class="controls">
+                @Html.EditorFor(model => model.AltBusinessContact)
+                @Html.ValidationMessageFor(model => model.AltBusinessContact)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.AltBusinessContactEmail)
+            </div>
+            <div class="controls">
+                @Html.EditorFor(model => model.AltBusinessContactEmail)
+                @Html.ValidationMessageFor(model => model.AltBusinessContactEmail)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.AltBusinessContactPhone)
+            </div>
+            <div class="controls">
+                @Html.EditorFor(model => model.AltBusinessContactPhone)
+                @Html.ValidationMessageFor(model => model.AltBusinessContactPhone)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.TechnicalContact)
+            </div>
+            <div class="controls">
+                @Html.EditorFor(model => model.TechnicalContact)
+                @Html.ValidationMessageFor(model => model.TechnicalContact)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.TechnicalContactEmail)
+            </div>
+            <div class="controls">
+                @Html.EditorFor(model => model.TechnicalContactEmail)
+                @Html.ValidationMessageFor(model => model.TechnicalContactEmail)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.TechnicalContactPhone)
+            </div>
+            <div class="controls">
+                @Html.EditorFor(model => model.TechnicalContactPhone)
+                @Html.ValidationMessageFor(model => model.TechnicalContactPhone)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.CallTime)
+            </div>
+            <div class="controls">
+                @Html.DropDownListFor(model => model.CallTime, Html.GetSelectList(Model.CallTime, "Any Time", "Business Hours", "Evenings"))
+                @Html.ValidationMessageFor(model => model.CallTime)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.ContactMethod)
+            </div>
+            <div class="controls">
+                @Html.DropDownListFor(model => model.ContactMethod, Html.GetSelectList(Model.ContactMethod, "Phone", "Email"))
+                @Html.ValidationMessageFor(model => model.ContactMethod)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.ApplicationType)
+            </div>
+            <div class="controls">
+                @Html.DropDownListFor(model => model.ApplicationType, Html.GetSelectList(Model.ApplicationType, "I don't know", "Public Website", "Online Payment System", "Contact Management System", "Email Solution", "Mobile Application", "Internal Website", "Internal Client Application"))
+                @Html.ValidationMessageFor(model => model.ApplicationType)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">
+                @Html.LabelFor(model => model.WorkRequested)
+            </div>
+            <div class="controls">
+                @Html.TextAreaFor(model => model.WorkRequested)
+                @Html.ValidationMessageFor(model => model.WorkRequested)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" value="Save" class="btn btn-success btn-large" />
+            </div>
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(function () {
+            tinymce.init({
+                selector: "textarea",
+                width: 500,
+                height: 300
+            });
+
+            $('span.field-validation-valid, span.field-validation-error').each(function () {
+                $(this).addClass('help-inline');
+            });
+
+            $('#BusinessContactPhone').mask("(999) 999-9999");
+            $('#AltBusinessContactPhone').mask("(999) 999-9999");
+            $('#TechnicalContactPhone').mask("(999) 999-9999");
+        });
+
+        jQuery.validator.setDefaults({
+            highlight: function (element, errorClass, validClass) {
+                if (element.type === 'radio') {
+                    this.findByName(element.name).addClass(errorClass).removeClass(validClass);
+                } else {
+                    $(element).addClass(errorClass).removeClass(validClass);
+                    $(element).closest('.control-group').removeClass('success').addClass('error');
+                }
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                if (element.type === 'radio') {
+                    this.findByName(element.name).removeClass(errorClass).addClass(validClass);
+                } else {
+                    $(element).removeClass(errorClass).addClass(validClass);
+                    $(element).closest('.control-group').removeClass('error').addClass('success');
+                }
+            }
+        });
+    </script>
+}

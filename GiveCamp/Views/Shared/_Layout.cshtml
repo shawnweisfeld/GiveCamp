@@ -21,10 +21,10 @@
                     <div class="container">
                         <ul class="nav">
                             @Html.MenuLink("Home", "Index", "Home")
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Location</a></li>
-                            <li><a href="#">Schedule</a></li>
-                            <li><a href="#">Sponsors</a></li>
+                            @Html.MenuLink("News", "News", "Home")
+                            @Html.MenuLink("Location", "Location", "Home")
+                            @Html.MenuLink("Schedule", "Schedule", "Home")
+                            @Html.MenuLink("Sponsors", "Sponsors", "Home")
                             @Html.MenuLink("Contact", "Contact", "Home")
                             @if (Request.IsAuthenticated)
                             {
