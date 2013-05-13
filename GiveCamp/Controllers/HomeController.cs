@@ -50,7 +50,11 @@ namespace GiveCamp.Controllers
         public ActionResult SponsorInfo()
         {
             return View();
-        }  
-    
+        }
+
+        public ActionResult History()
+        {
+            return View();
+        }
     }
 }
